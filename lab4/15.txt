@@ -1,0 +1,40 @@
+TITLE first Example Data definition
+INNcLUDE Irvine32.inc
+.data
+
+msg1	byte "Enter ",0
+msg2	byte ". char ",0
+msg3	byte "The string : ",0
+buffer	byte 5 dup(0),0
+
+
+.code
+main PROC
+callclrscr
+
+mov ebx,1
+mov ecx,5
+start :
+	mov edx,offset msg1
+	call writestring
+	mov eax, ebx
+	call writedec
+	mov edx, offset msg2
+	call writestring
+	call readchar	;tek baþýna sadece okur ekrana yazmaz
+	call writechar	;readchar ile okuduktan hemen sonra ekrana yazar
+	mov buffer[esi],al
+	inc es
+	inc ebx
+	call crlf
+		loop start
+
+mov edx, offset buffer
+call writestring
+
+
+
+call dumpregs
+	exit
+main ENDP
+END main

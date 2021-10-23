@@ -1,0 +1,32 @@
+TITLE first Example Data definition
+INNcLUDE Irvine32.inc
+.data
+
+mgs" 	byte "Enter a signed hexadecimal number : ",0
+msg2	byte "Enter a string : ",0
+msg3	byte "Total : ",0
+buffer	byte 50 dup(0),0
+
+
+.code
+main PROC
+call clrscr
+call randomize	;it makes reset for random number generator
+mov ecx,10
+
+start:
+	mov eax, 1000h
+	call randomrange
+	callwritehex
+	cal crlf
+	mov edx, 500
+	call delay
+
+	loop start
+
+
+
+call dumpregs
+	exit
+main ENDP
+END main

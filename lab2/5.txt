@@ -1,0 +1,27 @@
+TITLE first Example Data definition
+INNcLUDE Irvine32.inc
+.data
+var1	byte	10h
+array1	byte	25h,90h,3 dup(95h)
+var2	word	1324h
+array2	word	3 dup (950h)
+var3	dword	588955h
+array3	dword	2 dup(3A54BC32h)
+
+
+.code
+main PROC
+callclrscr
+
+mov eax, lengthof array1
+mov ebx, sizeof array1
+mov ecx, type array1
+
+mov edx, lengthof array1
+mov esi, sizeof array1
+mov edi, type array1
+
+call dumpregs
+	exit
+main ENDP
+END main

@@ -1,0 +1,35 @@
+TITLE first Example Data definition
+INNcLUDE Irvine32.inc
+.data
+
+mgs" byte "Enter a signed hexadecimal number : ",0
+msg2 byte "Enter a string : ",0
+msg3 byte "Total : ",0
+.code
+main PROC
+callclrscr
+mov ecx,5
+mov ebx,0
+start:
+		mov edx,offset msg1
+		call writestring
+		call readhex
+		add ebx,eax
+		loop start
+movedx,offset msg3	
+call writestring	;writestring sadece edx ile çalýþýr 
+mov eax, ebx		;diðerleri ise eax
+call writedec
+call crlf
+call writeint
+call crlf
+call writebin
+call crlf
+call writehex
+call crlf
+
+
+call dumpregs
+	exit
+main ENDP
+END main

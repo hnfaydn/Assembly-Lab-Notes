@@ -1,0 +1,18 @@
+TITLE Data Definiton
+INCLUDE Irvine32.inc
+.data
+var1	byte	10h
+var2	byte	-1
+var3	byte	10001100b
+array1	byte	15,20h,10011010b,-2,95h
+array2	byte	5 dup(0)
+var4	word	1234h
+array3	word	1974h,312h,-1
+var5	dword	30508010h
+array4	dword	2 dup(20h)
+char1	byte	"A"
+string1	byte	"Assembly",0
+
+.code
+main PROC
+	exit

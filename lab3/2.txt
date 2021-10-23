@@ -1,0 +1,18 @@
+TITLE First Example Data definition
+INCLUDE Irvine32.inc
+.data
+
+var1	byte	35
+var2	word	9526h
+var3	dword	659878A2h
+
+.code
+main PROC
+call clrscr
+
+movsx eax, word ptr[var1+3]
+
+call dumpregs
+	exit
+main ENDP
+END main

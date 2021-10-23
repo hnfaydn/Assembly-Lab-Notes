@@ -1,0 +1,22 @@
+TITLE First Example Data definition
+INCLUDE Irvine32.inc
+.data
+
+var1	byte	35
+var2	word	9526h
+var3	dword	659878A2h
+
+.code
+main PROC
+call clrscr
+
+mov ebx,offset var1
+add ebx,type var3	;type yanýndaki value deðerini ekler var3 dword olduðu için 4 byte ekler
+inc byte ptr [ebx]	;c=0, s,z,o=0
+
+mov ecx, var3
+
+call dumpregs
+	exit
+main ENDP
+END main

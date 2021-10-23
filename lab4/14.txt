@@ -1,0 +1,23 @@
+TITLE first Example Data definition
+INNcLUDE Irvine32.inc
+.data
+
+mgs" 	byte "Enter a signed hexadecimal number : ",0
+msg2	byte "Enter a string : ",0
+msg3	byte "Total : ",0
+buffer	byte 50 dup(0),0
+
+
+.code
+main PROC
+call clrscr
+
+mov esi, offset msg1
+mov ecx, 150
+mov ebx, 4
+call dumpmem
+
+call dumpregs
+	exit
+main ENDP
+END main

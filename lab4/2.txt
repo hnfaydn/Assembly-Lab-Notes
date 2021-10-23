@@ -1,0 +1,18 @@
+TITLE first Example Data definition
+INNcLUDE Irvine32.inc
+.data
+
+mgs" byte "Enter a signed integer number : ",0
+msg2 byte "Enter a string : ",0
+msg3 byte "Total : ",0
+.code
+main PROC
+callclrscr
+mov edx, offset msg1
+call writestring
+
+
+call dumpregs
+	exit
+main ENDP
+END main
